@@ -57,17 +57,14 @@ export function Nav() {
         <div className="container-mc flex h-14 items-center justify-between">
           <Link
             href="/"
-            className="group flex items-center gap-2.5 text-ink transition-colors hover:text-accent"
-            aria-label="Home"
+            className="group inline-flex text-ink transition-transform hover:scale-[1.04]"
+            aria-label="Home — Emily Wei"
           >
             <span
               aria-hidden
-              className="grid h-6 w-6 place-items-center rounded-full border border-[color:var(--accent)]/40 text-[10px] font-mono text-accent"
+              className="grid h-10 w-10 place-items-center rounded-full border border-[color:var(--accent)]/50 bg-bg/40 font-display text-base lowercase tracking-tight text-accent transition-colors group-hover:border-accent group-hover:bg-[color:var(--accent)]/10"
             >
-              ew
-            </span>
-            <span className="font-display text-base tracking-tight">
-              Emily Wei
+              wei
             </span>
           </Link>
 
