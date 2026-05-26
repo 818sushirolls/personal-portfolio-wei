@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,10 +8,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
+  axes: ["opsz", "SOFT"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -25,20 +26,20 @@ const SITE_URL = "https://portfolio.example.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Wei — Software Engineer / Aerospace Systems",
-    template: "%s — Wei",
+    default: "Emily Wei",
+    template: "%s · Emily Wei",
   },
   description:
-    "Mission Control: a portfolio of software, aerospace, and ML systems work by Wei.",
+    "Personal site of Emily Wei. Software engineer with a soft spot for aerospace, sci-fi, and the kind of code that has to track something physical.",
   openGraph: {
-    title: "Wei — Software Engineer / Aerospace Systems",
+    title: "Emily Wei",
     description:
-      "Mission Control: a portfolio of software, aerospace, and ML systems work.",
+      "Personal site of Emily Wei. Software engineer with a soft spot for aerospace, sci-fi, and the kind of code that has to track something physical.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wei — Software Engineer / Aerospace Systems",
+    title: "Emily Wei",
   },
 };
 
@@ -48,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-bg text-ink antialiased">
