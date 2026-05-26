@@ -1,47 +1,79 @@
-import Link from "next/link";
-import { Button, GlassCard, TelemetryLine } from "@/components/ui";
-import { ArrowRight } from "lucide-react";
+import { Nav } from "@/components/layout/Nav";
+import { Hero } from "@/components/sections/Hero";
+import { GlassCard, SectionHeader } from "@/components/ui";
+
+interface PlaceholderProps {
+  id: string;
+  index: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+}
+
+function Placeholder({ id, index, eyebrow, title, description }: PlaceholderProps) {
+  return (
+    <section id={id} className="container-mc scroll-mt-20 py-24 sm:py-32">
+      <SectionHeader
+        index={`MISSION · ${index}`}
+        eyebrow={eyebrow}
+        title={title}
+        description={description}
+      />
+      <GlassCard className="mt-10 flex items-center justify-between gap-4">
+        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-mute">
+          // SECTION SCAFFOLDED — CONTENT INCOMING
+        </span>
+        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-warn">
+          T-MINUS · NEXT WAYPOINT
+        </span>
+      </GlassCard>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
-    <main
-      id="main"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden telemetry-grid"
-    >
-      <div className="container-mc">
-        <GlassCard variant="strong" className="mx-auto max-w-xl space-y-6">
-          <span className="eyebrow">// PRE-FLIGHT · STAGE 01</span>
-          <h1 className="font-display text-4xl tracking-tight sm:text-5xl">
-            Mission Control
-          </h1>
-          <p className="text-ink-soft">
-            Foundation deployed. Hero, missions, logbook, and contact arrive in
-            stages 2–7. Design system live below.
-          </p>
-          <TelemetryLine label="Status" value="ON THE PAD" />
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Button as="a" href="/lab" iconRight={<ArrowRight size={16} />}>
-              Open Component Lab
-            </Button>
-            <Button
-              as="a"
-              href="https://github.com/818sushirolls/personal-portfolio-wei"
-              variant="secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </Button>
-          </div>
-          <p className="pt-2 text-xs text-mute">
-            <Link href="/lab" className="hover:text-accent">
-              /lab
-            </Link>{" "}
-            shows the full design system. The launchpad hero replaces this view in
-            Stage 2.
-          </p>
-        </GlassCard>
-      </div>
-    </main>
+    <>
+      <Nav />
+      <main id="main">
+        <Hero />
+
+        <Placeholder
+          id="briefing"
+          index="01"
+          eyebrow="About"
+          title="Mission briefing"
+          description="A short personal intro and the systems-thinking background behind this portfolio."
+        />
+        <Placeholder
+          id="missions"
+          index="02"
+          eyebrow="Projects"
+          title="Missions"
+          description="Selected projects across software, ML, and aerospace simulations — each with its own writeup."
+        />
+        <Placeholder
+          id="logbook"
+          index="03"
+          eyebrow="Engineering Logbook"
+          title="Mission archive"
+          description="Reports, CAD, simulations, and engineering notes, dated and indexed."
+        />
+        <Placeholder
+          id="systems"
+          index="04"
+          eyebrow="Skills"
+          title="Onboard systems"
+          description="Skills laid out as spacecraft subsystems — propulsion, guidance, comms, infrastructure."
+        />
+        <Placeholder
+          id="ground-control"
+          index="05"
+          eyebrow="Contact"
+          title="Ground control"
+          description="Open a channel — contact form, email, GitHub, LinkedIn."
+        />
+      </main>
+    </>
   );
 }
