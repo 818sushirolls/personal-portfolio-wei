@@ -69,11 +69,11 @@ export default function LabPage() {
             index="02"
             eyebrow="Typography"
             title="Type stack"
-            description="Fraunces for display, Inter for body, JetBrains Mono for telemetry."
+            description="Newsreader for display, Inter for body, JetBrains Mono for telemetry."
           />
           <GlassCard className="space-y-6">
             <div>
-              <p className="eyebrow mb-2">display, Fraunces</p>
+              <p className="eyebrow mb-2">display, Newsreader</p>
               <p className="font-display text-5xl tracking-tight text-ink">
                 Software, lightly haunted by aerospace.
               </p>
