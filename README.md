@@ -14,18 +14,16 @@ Live: _coming soon on Vercel_
 
 ## Sections
 
-- **Launch Pad.** Hero with name, what I do, links to GitHub, LinkedIn, and
-  resume.
-- **Briefing.** Quick about-me. Background in CS, aerospace, and math, plus the
-  kinds of systems I like building.
-- **Missions.** Featured projects (ML pipelines, backend services, aerospace
+- **Hero.** Name, what I do, links to GitHub, LinkedIn, and resume.
+- **About.** Background in CS, aerospace, and math, plus the kinds of systems
+  I like building.
+- **Projects.** Featured work (ML pipelines, backend services, aerospace
   experiments). Each one has its own writeup page.
 - **Logbook.** Markdown-driven archive of older technical work. Reports, CAD
   renders, simulations, presentations, engineering notes. Each entry is dated
   so the archive reads as a running journal.
-- **Systems.** Skills laid out as spacecraft subsystems (propulsion = backend,
-  guidance = ML, comms = APIs, infra = cloud).
-- **Ground Control.** Contact form, email, socials.
+- **Toolkit.** The tools and tech I reach for most often, grouped by area.
+- **Contact.** How to get in touch.
 
 ## Stack
 

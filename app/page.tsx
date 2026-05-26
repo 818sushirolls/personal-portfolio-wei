@@ -1,5 +1,7 @@
 import { Nav } from "@/components/layout/Nav";
+import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/Hero";
+import { Skills } from "@/components/sections/Skills";
 import { GlassCard, SectionHeader } from "@/components/ui";
 
 interface PlaceholderProps {
@@ -27,7 +29,6 @@ function Placeholder({
       />
       <GlassCard className="mt-10 flex flex-wrap items-center justify-between gap-4">
         <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-mute">
-          {/* lowercase, friendly, never finished-looking */}
           building this section next
         </span>
         <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-mute-soft">
@@ -44,41 +45,28 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-
+        <About />
         <Placeholder
-          id="briefing"
-          index="01"
-          eyebrow="About"
-          title="Briefing"
-          description="A short intro, the path I took to get here, and the kind of work I like doing."
-        />
-        <Placeholder
-          id="missions"
+          id="projects"
           index="02"
           eyebrow="Projects"
-          title="Missions"
-          description="Featured projects across software, ML, and aerospace simulations. Each has its own writeup page."
+          title="Projects"
+          description="Selected work across software, ML, and aerospace experiments. Each has its own writeup."
         />
         <Placeholder
           id="logbook"
           index="03"
-          eyebrow="Engineering Logbook"
+          eyebrow="Logbook"
           title="Logbook"
           description="An archive of older technical work, reports, and notes. Dated, so it reads as a running journal."
         />
+        <Skills />
         <Placeholder
-          id="systems"
-          index="04"
-          eyebrow="Skills"
-          title="Onboard systems"
-          description="The toolkit I reach for, organized by subsystem rather than as a list of bullet points."
-        />
-        <Placeholder
-          id="ground-control"
+          id="contact"
           index="05"
           eyebrow="Contact"
-          title="Ground control"
-          description="The best ways to get in touch."
+          title="Get in touch"
+          description="The best ways to reach me."
         />
       </main>
     </>

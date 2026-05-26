@@ -119,7 +119,7 @@ export function Hero() {
       </div>
 
       <motion.a
-        href="#briefing"
+        href="#about"
         aria-label="Scroll to about"
         className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 group flex flex-col items-center gap-2 text-mute transition-colors hover:text-accent"
         initial={reduced ? { opacity: 1 } : { opacity: 0 }}

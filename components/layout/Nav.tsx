@@ -14,11 +14,11 @@ interface NavLink {
 }
 
 const LINKS: NavLink[] = [
-  { id: "briefing", label: "Briefing", number: "01" },
-  { id: "missions", label: "Missions", number: "02" },
+  { id: "about", label: "About", number: "01" },
+  { id: "projects", label: "Projects", number: "02" },
   { id: "logbook", label: "Logbook", number: "03" },
-  { id: "systems", label: "Systems", number: "04" },
-  { id: "ground-control", label: "Ground Control", number: "05" },
+  { id: "toolkit", label: "Toolkit", number: "04" },
+  { id: "contact", label: "Contact", number: "05" },
 ];
 
 export function Nav() {
@@ -58,7 +58,7 @@ export function Nav() {
           <Link
             href="/"
             className="group inline-flex text-ink transition-transform hover:scale-[1.04]"
-            aria-label="Home — Emily Wei"
+            aria-label="Home, Emily Wei"
           >
             <span
               aria-hidden

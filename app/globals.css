@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ---------- Mission Control Design Tokens ---------- */
+/* ---------- Design Tokens ---------- */
 :root {
   --bg: #06080e;
   --bg-elev: #0a0d15;
