@@ -4,26 +4,26 @@ import { motion, useReducedMotion } from "framer-motion";
 import { GlassCard, SectionHeader, Tag, TelemetryLine } from "@/components/ui";
 
 interface TimelinePoint {
-  year: string;
+  period: string;
   label: string;
   detail: string;
 }
 
 const TIMELINE: TimelinePoint[] = [
   {
-    year: "Earlier",
-    label: "Aerospace + Mechanical foundations",
+    period: "first",
+    label: "Aerospace and mechanical foundations",
     detail: "Propulsion, fluid mechanics, CAD, and design coursework.",
   },
   {
-    year: "Then",
-    label: "Computer Science + Math",
-    detail: "Algorithms, systems, ML, and applied math.",
+    period: "then",
+    label: "Computer science and math",
+    detail: "Algorithms, systems, ML, applied math.",
   },
   {
-    year: "Now",
+    period: "now",
     label: "Software for engineering teams",
-    detail: "Backend services, ML pipelines, and tooling — built to last.",
+    detail: "Backend services, ML pipelines, and tooling for technical work.",
   },
 ];
 
@@ -48,32 +48,34 @@ export function About() {
         };
 
   return (
-    <section id="briefing" className="container-mc scroll-mt-20 py-24 sm:py-32">
+    <section
+      id="about"
+      className="container-mc scroll-mt-20 py-24 sm:py-32"
+    >
       <motion.div {...fadeInUp(0)}>
         <SectionHeader
-          index="MISSION · 01"
-          eyebrow="Mission Briefing"
-          title="An aerospace engineer who builds software."
-          description="I came up through propulsion, fluid mechanics, and CAD before falling into systems software and ML. Today I write backend services and tooling that engineering teams depend on — and I keep one foot in aerospace whenever I can."
+          index="01"
+          eyebrow="About"
+          title="About me"
+          description="I'm Emily, a recently graduated software engineer who grew up loving rockets and sci-fi. I studied propulsion, fluid mechanics, and CAD, and ended up writing software because the problems I cared about kept showing up in code."
         />
       </motion.div>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-5">
         <motion.div {...fadeInUp(0.05)} className="lg:col-span-3">
           <GlassCard className="h-full space-y-5">
-            <span className="eyebrow text-accent">// PROFILE</span>
+            <span className="eyebrow text-accent">about</span>
             <p className="text-base leading-relaxed text-ink-soft sm:text-lg">
-              My favorite engineering is the kind that crosses boundaries — a
-              backend that mirrors a physical control system, an ML pipeline
-              that respects the limits of the data feeding it, a piece of
-              tooling that turns a slow loop into a fast one.
+              My favorite engineering is the kind that crosses boundaries. A
+              backend that mirrors a physical control system. An ML pipeline
+              that respects the data feeding it. Tooling that turns a slow loop
+              into a fast one.
             </p>
             <p className="text-base leading-relaxed text-ink-soft sm:text-lg">
-              I&apos;m a recent graduate with an interdisciplinary background and a
-              real interest in software for engineering and aerospace
+              I&apos;m most interested in software for engineering and aerospace
               applications. Simulations, telemetry, ground-station tooling,
-              flight data — anything where the code has to track something
-              real.
+              flight data, anything where the code has to track something
+              physical. Bonus points if there&apos;s a launch involved.
             </p>
             <div className="flex flex-wrap gap-2 pt-1">
               {DISCIPLINES.map((d) => (
@@ -87,13 +89,13 @@ export function About() {
 
         <motion.div {...fadeInUp(0.12)} className="lg:col-span-2">
           <GlassCard variant="strong" className="h-full space-y-4">
-            <span className="eyebrow text-warn">// TRAJECTORY</span>
+            <span className="eyebrow text-warn">how I got here</span>
             <ol className="relative space-y-5 pl-6">
               <span
                 aria-hidden
                 className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-[color:var(--accent)]/40 via-[color:var(--hairline-strong)] to-transparent"
               />
-              {TIMELINE.map((p, i) => (
+              {TIMELINE.map((p) => (
                 <li key={p.label} className="relative">
                   <span
                     aria-hidden
@@ -102,19 +104,16 @@ export function About() {
                     <span className="absolute inset-1 rounded-full bg-accent" />
                   </span>
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-mute">
-                    {p.year}
+                    {p.period}
                   </p>
                   <p className="mt-0.5 text-sm font-medium text-ink">
                     {p.label}
                   </p>
                   <p className="mt-0.5 text-sm text-mute">{p.detail}</p>
-                  {i < TIMELINE.length - 1 && (
-                    <span className="block h-0.5" aria-hidden />
-                  )}
                 </li>
               ))}
             </ol>
-            <TelemetryLine label="Looking for" value="ENGINEERING ROLES · NEW GRAD" />
+            <TelemetryLine label="status" value="open to work" />
           </GlassCard>
         </motion.div>
       </div>
