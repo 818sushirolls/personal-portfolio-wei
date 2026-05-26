@@ -3,7 +3,7 @@ import { Button, GlassCard, TelemetryLine } from "@/components/ui";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Signal Lost",
+  title: "Not found",
 };
 
 export default function NotFound() {
@@ -13,25 +13,25 @@ export default function NotFound() {
       className="flex min-h-screen items-center justify-center px-5 telemetry-grid"
     >
       <GlassCard variant="strong" className="max-w-md space-y-5 text-center">
-        <span className="eyebrow text-warn">// SIGNAL LOST · 404</span>
+        <span className="eyebrow text-warn">404 · signal lost</span>
         <h1 className="font-display text-5xl tracking-tight">
-          Telemetry interrupted.
+          Off course.
         </h1>
         <p className="text-ink-soft">
-          The page you requested is outside the current orbital path. Reset
-          course and return to base.
+          That page isn&apos;t somewhere I&apos;ve been yet, or it drifted off
+          orbit. Head back to the launchpad and try again.
         </p>
-        <TelemetryLine label="Last known signal" value="UNREACHABLE" />
+        <TelemetryLine label="last known signal" value="unreachable" />
         <div className="flex justify-center pt-1">
           <Button as="a" href="/" iconLeft={<ArrowLeft size={16} />}>
-            Return to launchpad
+            Back to home
           </Button>
         </div>
         <Link
           href="/lab"
           className="block pt-1 text-xs text-mute hover:text-accent"
         >
-          or visit /lab
+          or peek at /lab
         </Link>
       </GlassCard>
     </main>

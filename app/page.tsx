@@ -10,21 +10,28 @@ interface PlaceholderProps {
   description: string;
 }
 
-function Placeholder({ id, index, eyebrow, title, description }: PlaceholderProps) {
+function Placeholder({
+  id,
+  index,
+  eyebrow,
+  title,
+  description,
+}: PlaceholderProps) {
   return (
     <section id={id} className="container-mc scroll-mt-20 py-24 sm:py-32">
       <SectionHeader
-        index={`MISSION · ${index}`}
+        index={index}
         eyebrow={eyebrow}
         title={title}
         description={description}
       />
-      <GlassCard className="mt-10 flex items-center justify-between gap-4">
+      <GlassCard className="mt-10 flex flex-wrap items-center justify-between gap-4">
         <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-mute">
-          // SECTION SCAFFOLDED — CONTENT INCOMING
+          {/* lowercase, friendly, never finished-looking */}
+          building this section next
         </span>
-        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-warn">
-          T-MINUS · NEXT WAYPOINT
+        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-mute-soft">
+          coming soon
         </span>
       </GlassCard>
     </section>
@@ -42,36 +49,36 @@ export default function Home() {
           id="briefing"
           index="01"
           eyebrow="About"
-          title="Mission briefing"
-          description="A short personal intro and the systems-thinking background behind this portfolio."
+          title="Briefing"
+          description="A short intro, the path I took to get here, and the kind of work I like doing."
         />
         <Placeholder
           id="missions"
           index="02"
           eyebrow="Projects"
           title="Missions"
-          description="Selected projects across software, ML, and aerospace simulations — each with its own writeup."
+          description="Featured projects across software, ML, and aerospace simulations. Each has its own writeup page."
         />
         <Placeholder
           id="logbook"
           index="03"
           eyebrow="Engineering Logbook"
-          title="Mission archive"
-          description="Reports, CAD, simulations, and engineering notes, dated and indexed."
+          title="Logbook"
+          description="An archive of older technical work, reports, and notes. Dated, so it reads as a running journal."
         />
         <Placeholder
           id="systems"
           index="04"
           eyebrow="Skills"
           title="Onboard systems"
-          description="Skills laid out as spacecraft subsystems — propulsion, guidance, comms, infrastructure."
+          description="The toolkit I reach for, organized by subsystem rather than as a list of bullet points."
         />
         <Placeholder
           id="ground-control"
           index="05"
           eyebrow="Contact"
           title="Ground control"
-          description="Open a channel — contact form, email, GitHub, LinkedIn."
+          description="The best ways to get in touch."
         />
       </main>
     </>

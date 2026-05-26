@@ -19,13 +19,13 @@ export default function LabPage() {
     <main id="main" className="min-h-screen telemetry-grid">
       <div className="container-mc py-16 sm:py-24 space-y-20">
         <header className="space-y-3">
-          <span className="eyebrow">// COMPONENT LAB</span>
+          <span className="eyebrow">component lab · internal</span>
           <h1 className="font-display text-4xl tracking-tight text-ink sm:text-5xl">
-            Mission Control — Design System
+            Design system
           </h1>
           <p className="max-w-2xl text-ink-soft">
-            Internal showcase of design tokens, glass surfaces, and primitives.
-            Not indexed. Will be removed before final ship.
+            Tokens, glass surfaces, and primitives I'm reusing across the rest
+            of the site. Not indexed, will get removed before final ship.
           </p>
         </header>
 
@@ -66,29 +66,29 @@ export default function LabPage() {
         {/* Typography */}
         <section className="space-y-6">
           <SectionHeader
-            index="LAB · 02"
+            index="02"
             eyebrow="Typography"
             title="Type stack"
-            description="Space Grotesk for display, Inter for body, JetBrains Mono for telemetry."
+            description="Fraunces for display, Inter for body, JetBrains Mono for telemetry."
           />
           <GlassCard className="space-y-6">
             <div>
-              <p className="eyebrow mb-2">Display — Space Grotesk</p>
+              <p className="eyebrow mb-2">display, Fraunces</p>
               <p className="font-display text-5xl tracking-tight text-ink">
-                Trajectory of a systems engineer.
+                Software, lightly haunted by aerospace.
               </p>
             </div>
             <div>
-              <p className="eyebrow mb-2">Body — Inter</p>
+              <p className="eyebrow mb-2">body, Inter</p>
               <p className="text-base text-ink-soft max-w-2xl leading-relaxed">
-                Software engineer with an aerospace systems background, building
-                backend services, ML pipelines, and tooling for engineering teams.
+                Software engineer with a soft spot for aerospace. I write
+                backend services, ML pipelines, and the tooling around them.
               </p>
             </div>
             <div>
-              <p className="eyebrow mb-2">Mono — JetBrains Mono</p>
+              <p className="eyebrow mb-2">mono, JetBrains Mono</p>
               <p className="font-mono text-sm text-mute">
-                T-00:42:18 · MISSION 03 · ALT 12.4 km · VEL 2,840 m/s
+                t-00:42:18 · alt 12.4 km · vel 2,840 m/s
               </p>
             </div>
           </GlassCard>
