@@ -81,7 +81,7 @@ export default function LabPage() {
             <div>
               <p className="eyebrow mb-2">body, Inter</p>
               <p className="text-base text-ink-soft max-w-2xl leading-relaxed">
-                Software engineer with a soft spot for aerospace. I write
+                Software engineer with a passion for aerospace. I write
                 backend services, ML pipelines, and the tooling around them.
               </p>
             </div>

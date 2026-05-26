@@ -11,7 +11,7 @@ const Starfield = dynamic(() => import("@/components/three/Starfield"), {
 });
 
 const NAME = "Emily Wei";
-const TAGLINE = "Software engineer with a soft spot for aerospace.";
+const TAGLINE = "Software engineer with a passion for aerospace.";
 const SUBROLE = "Backend · ML · Systems";
 const INTRO =
   "I write backend services, ML pipelines, and the tooling around them. Outside of work I'm into rockets, sci-fi, and any kind of system where the software has to track something physical.";

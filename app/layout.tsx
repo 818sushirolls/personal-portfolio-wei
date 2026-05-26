@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     template: "%s · Emily Wei",
   },
   description:
-    "Personal site of Emily Wei. Software engineer with a soft spot for aerospace, sci-fi, and the kind of code that has to track something physical.",
+    "Personal site of Emily Wei. Software engineer with a passion for aerospace, sci-fi, and the kind of code that has to track something physical.",
   openGraph: {
     title: "Emily Wei",
     description:
-      "Personal site of Emily Wei. Software engineer with a soft spot for aerospace, sci-fi, and the kind of code that has to track something physical.",
+      "Personal site of Emily Wei. Software engineer with a passion for aerospace, sci-fi, and the kind of code that has to track something physical.",
     type: "website",
   },
   twitter: {
