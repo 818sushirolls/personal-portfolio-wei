@@ -57,11 +57,18 @@ export function Nav() {
         <div className="container-mc flex h-14 items-center justify-between">
           <Link
             href="/"
-            className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-ink transition-colors hover:text-accent"
+            className="group flex items-center gap-2.5 text-ink transition-colors hover:text-accent"
             aria-label="Home"
           >
-            <span aria-hidden className="text-accent">▲</span>
-            <span>WEI / MISSION CONTROL</span>
+            <span
+              aria-hidden
+              className="grid h-6 w-6 place-items-center rounded-full border border-[color:var(--accent)]/40 text-[10px] font-mono text-accent"
+            >
+              ew
+            </span>
+            <span className="font-display text-base tracking-tight">
+              Emily Wei
+            </span>
           </Link>
 
           {/* Desktop nav */}
