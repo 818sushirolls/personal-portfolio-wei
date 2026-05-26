@@ -51,7 +51,7 @@ export function Hero() {
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
           </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-mute">
-            Currently · open to new-grad roles
+            Open to work
           </span>
         </motion.div>
 
