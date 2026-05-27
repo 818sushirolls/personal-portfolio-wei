@@ -1,0 +1,60 @@
+---
+title: "Wine quality classification"
+summary: "A modular ML pipeline that classifies wine quality from 6,500+ samples, sweeping 72 model configurations across logistic regression, SVM, KNN, and polynomial / PCA feature variants."
+stack: ["Python", "scikit-learn", "pandas", "NumPy", "Jupyter", "matplotlib"]
+repo: "https://github.com/818sushirolls"
+demo: ""
+status: "Complete"
+date: "2026-05-15"
+order: 1
+---
+
+## What it is
+
+A classifier trained on the UCI Wine Quality dataset (6,500+ samples across red and
+white) that predicts a quality score from physicochemical features like residual
+sugar, alcohol, and pH.
+
+The point wasn't to win on accuracy. It was to build a small, honest end-to-end
+pipeline I could trust: load, clean, split, fit, evaluate, and compare model
+configurations reproducibly.
+
+## How it works
+
+The pipeline is built as reusable data-processing and model-training modules
+wrapped around `scikit-learn`. The key pieces are:
+
+1. **Stratified train / validation / test splitting** so the class distribution is
+   preserved across folds.
+2. **Train-only feature fitting.** Every scaler, PCA decomposition, and polynomial
+   expansion is fit on the train fold and only applied to validation and test. No
+   information leaks across folds, even by accident.
+3. **Model sweep** comparing logistic regression, support vector machines, and
+   k-nearest neighbors.
+4. **Feature variants** including standardized raw features, PCA-reduced features,
+   and polynomial expansions up to degree two.
+
+The combination of model x scaler x feature variant produces 72 configurations,
+each trained and evaluated under the same protocol so the comparison is apples to
+apples.
+
+## What I learned
+
+The big lesson was about **what the evaluation metric is actually telling you.**
+Best test F1 landed at 0.49. Not glamorous, but the dataset is sharply imbalanced,
+the labels are noisy and ordinal, and accuracy would have been misleading.
+Macro-F1 surfaced the real failure mode: every model could separate "medium" from
+the extremes, but struggled at the boundary between adjacent classes.
+
+It was also the first time I treated train / eval discipline as **code** rather
+than as intent. The pipeline can't cheat, because the scaler literally doesn't
+exist until training. Nothing in the validation step can see test data even by
+accident.
+
+## What I'd do next
+
+Treat quality as **ordinal** rather than categorical, which is what it actually
+is. There's a whole family of ordinal regression and ordered-classification
+techniques I'd want to compare against the multiclass baseline. I'd also
+calibrate the predicted probabilities, because right now the models are sharply
+overconfident on the medium class.

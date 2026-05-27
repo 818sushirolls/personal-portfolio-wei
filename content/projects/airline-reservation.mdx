@@ -1,0 +1,56 @@
+---
+title: "Airline reservation system"
+summary: "A Flask + MySQL reservation system with a REST API for flight search, booking, and admin workflows, deployed on AWS."
+stack: ["Python", "Flask", "MySQL", "REST", "AWS"]
+repo: ""
+demo: ""
+status: "Complete"
+date: "2024-12-05"
+order: 2
+---
+
+## What it is
+
+A reservation system for a fictional airline. Users can search flights by origin,
+destination, and date, book a seat, and view their reservations. An admin role
+can add flights and adjust fares.
+
+It started as a course project and ended up being the first thing I built fully
+end to end: backend, database, REST endpoints, and a real cloud deployment.
+
+## How it works
+
+- **Flask** for the backend, organized into blueprints for auth, flights, and
+  bookings.
+- **MySQL** for persistence, with foreign keys between users, flights, aircraft,
+  and bookings, and a unique constraint on `(flight_id, seat_number)` so the
+  database itself prevents double-booking.
+- **REST API** for every action, JSON in and out. The same endpoints power the
+  admin tooling and the user-facing flow.
+- **AWS** for hosting, with the application layer and database on managed
+  infrastructure so I could focus on the system itself rather than the box it
+  runs on.
+
+The booking flow is intentionally simple: pick flight, pick seat, confirm. If
+two people race for the same seat, the database catches the duplicate and the
+server returns a clean error instead of relying on application-side guards.
+
+## What I learned
+
+Two things stuck.
+
+First, **the database is the source of truth.** That single unique constraint on
+`(flight_id, seat_number)` replaced a lot of application logic and made the
+booking endpoint shorter, not longer. The endpoint just tries the insert and
+handles the constraint violation as "seat taken."
+
+Second, **deploying is a different skill than building.** Locally everything works
+on defaults. In a real environment, every assumption about file paths,
+environment variables, and time zones has to be made explicit. The first few
+deploys were broken in interesting and educational ways.
+
+## What I'd do next
+
+The booking flow is synchronous. I'd add a hold-then-confirm step backed by a
+short-lived hold row with a TTL, which is closer to how real reservation systems
+work. I'd also move secrets out of the environment into a proper secrets store.

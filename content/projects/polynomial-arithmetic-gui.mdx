@@ -1,0 +1,53 @@
+---
+title: "Polynomial arithmetic GUI"
+summary: "A C++ polynomial engine backed by a custom linked-list representation, with a desktop GUI for adding and multiplying polynomials interactively."
+stack: ["C++", "OOP", "GUI"]
+repo: ""
+demo: ""
+status: "Complete"
+date: "2024-05-10"
+order: 3
+---
+
+## What it is
+
+A small desktop tool that lets you type two polynomials, pick an operation, and
+see the result. Under the hood, polynomials are stored as linked lists of
+`(coefficient, exponent)` terms, which keeps the representation compact for
+sparse polynomials.
+
+It was a data-structures coursework project, but it was the first time I wrote a
+full GUI in C++ and the first time I had to think carefully about ownership and
+memory management.
+
+## How it works
+
+- **Polynomial type.** A class wrapping a singly linked list of `Term` nodes,
+  kept sorted by descending exponent so addition and multiplication can walk the
+  lists once.
+- **Addition.** Merge the two lists term by term, combining matching exponents
+  along the way.
+- **Multiplication.** Distribute every term of one polynomial across the other
+  and collect the products into a new list, deduplicating exponents.
+- **GUI layer.** {/* TODO: name the GUI framework and describe the interaction loop. */}
+
+Memory is managed by the polynomial class itself. Every node it allocates is
+freed in the destructor, and the copy constructor and assignment operator each
+perform a deep copy so polynomials can be passed around safely.
+
+## What I learned
+
+This was the project where I actually internalized the rule of three. Skipping
+the copy constructor "just for now" worked fine until I returned a `Polynomial`
+from a function and the program started double-freeing memory.
+
+It was also a good lesson in **separating the engine from the interface.** The
+polynomial logic doesn't know the GUI exists. The GUI only ever talks to the
+engine through a small public API. Swapping the GUI for a command-line interface
+would be a small change.
+
+## What I'd do next
+
+- Generalize to polynomials in more than one variable.
+- Add subtraction and division (with remainder).
+- Persist sessions so you can save and reload your work between runs.

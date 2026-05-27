@@ -1,0 +1,41 @@
+---
+title: "2D trajectory simulator"
+summary: "A small Python tool for visualizing two-body orbital mechanics. Drag a body, set an initial velocity, watch the orbit close (or not)."
+stack: ["Python", "NumPy", "SciPy", "matplotlib"]
+repo: ""
+demo: ""
+status: "In progress"
+date: "2025-02-08"
+order: 4
+---
+
+## What it is
+
+A toy I keep coming back to. The idea is a small interactive notebook where
+you place a central body, drop a second body somewhere in the plane, set
+its initial velocity vector, and watch the orbit evolve under Newtonian
+gravity.
+
+It's not meant to be a serious astrodynamics tool. It's meant to be the
+fastest possible way to *feel* how an orbit responds to a velocity change.
+The kind of thing I wish I'd had as a study aid in undergrad.
+
+## What's done
+
+- Numerical integration of the two-body equations with `scipy.integrate.solve_ivp`
+- An adaptive time-step so high-eccentricity orbits don't skip over their
+  perigees
+- A matplotlib animation that traces the orbit with a fading tail
+- Conservation checks on energy and angular momentum so I can tell when
+  the integrator is misbehaving
+
+## What's next
+
+- A small ipywidgets layer so the initial velocity is a slider rather than a
+  function argument
+- A "burn" button that applies an impulsive delta-v at the current position
+  so I can practice plane-change maneuvers visually
+- Extending to a restricted three-body problem so I can mess around with
+  Lagrange points
+
+I'll publish a real repo when the UI is less embarrassing.
