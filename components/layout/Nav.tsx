@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, FileDown } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { Button, GithubIcon, LinkedinIcon } from "@/components/ui";
 import { cn } from "@/lib/cn";
 
@@ -95,7 +95,7 @@ export function Nav() {
               <GithubIcon size={16} />
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/wei818/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -105,10 +105,10 @@ export function Nav() {
             </a>
             <Button
               as="a"
-              href="/resume.pdf"
+              href="/resume"
               size="sm"
               variant="secondary"
-              iconLeft={<FileDown size={14} />}
+              iconLeft={<FileText size={14} />}
             >
               Resume
             </Button>
@@ -182,7 +182,7 @@ export function Nav() {
                       <GithubIcon size={18} />
                     </a>
                     <a
-                      href="https://www.linkedin.com/"
+                      href="https://www.linkedin.com/in/wei818/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
@@ -193,9 +193,9 @@ export function Nav() {
                   </div>
                   <Button
                     as="a"
-                    href="/resume.pdf"
+                    href="/resume"
                     size="sm"
-                    iconLeft={<FileDown size={14} />}
+                    iconLeft={<FileText size={14} />}
                   >
                     Resume
                   </Button>

@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, FileDown } from "lucide-react";
+import { ArrowDown, FileText } from "lucide-react";
 import { Button, GithubIcon, LinkedinIcon } from "@/components/ui";
 
 const Starfield = dynamic(() => import("@/components/three/Starfield"), {
@@ -92,8 +92,8 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-wrap items-center gap-3 pt-1"
         >
-          <Button as="a" href="/resume.pdf" iconLeft={<FileDown size={16} />}>
-            Download resume
+          <Button as="a" href="/resume" iconLeft={<FileText size={16} />}>
+            Resume
           </Button>
           <Button
             as="a"
@@ -107,7 +107,7 @@ export function Hero() {
           </Button>
           <Button
             as="a"
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/wei818/"
             target="_blank"
             rel="noopener noreferrer"
             variant="secondary"
