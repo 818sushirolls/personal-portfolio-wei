@@ -89,14 +89,14 @@ export async function Projects() {
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-mute-soft">
                   {formatDate(project.date)}
                 </span>
-                <div className="relative z-10 flex items-center gap-3">
+                <div className="pointer-events-none relative z-10 flex items-center gap-3">
                   {project.repo && (
                     <a
                       href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${project.title} on GitHub`}
-                      className="text-mute transition-colors hover:text-ink"
+                      className="pointer-events-auto text-mute transition-colors hover:text-ink"
                     >
                       <GithubIcon className="h-[18px] w-[18px]" />
                     </a>
@@ -107,17 +107,19 @@ export async function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${project.title} live demo`}
-                      className="text-mute transition-colors hover:text-ink"
+                      className="pointer-events-auto text-mute transition-colors hover:text-ink"
                     >
                       <ExternalLink className="h-[18px] w-[18px]" />
                     </a>
                   )}
-                  <span
+                  <Link
+                    href={`/projects/${project.slug}`}
                     aria-hidden
-                    className="pointer-events-none font-mono text-[11px] uppercase tracking-[0.18em] text-accent/80 transition-colors group-hover:text-accent"
+                    tabIndex={-1}
+                    className="pointer-events-auto font-mono text-[11px] uppercase tracking-[0.18em] text-accent/80 transition-colors group-hover:text-accent"
                   >
                     read more →
-                  </span>
+                  </Link>
                 </div>
               </div>
             </GlassCard>
