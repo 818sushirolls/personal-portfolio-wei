@@ -1,6 +1,7 @@
 import { Nav } from "@/components/layout/Nav";
 import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/Hero";
+import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
 import { GlassCard, SectionHeader } from "@/components/ui";
 
@@ -46,13 +47,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <About />
-        <Placeholder
-          id="projects"
-          index="02"
-          eyebrow="Projects"
-          title="Projects"
-          description="Selected work across software, ML, and aerospace experiments. Each has its own writeup."
-        />
+        <Projects />
         <Placeholder
           id="logbook"
           index="03"
