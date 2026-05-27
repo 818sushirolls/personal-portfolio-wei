@@ -71,16 +71,16 @@ export function Nav() {
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
             {LINKS.map((link) => (
-              <a
+              <Link
                 key={link.id}
-                href={`#${link.id}`}
+                href={`/#${link.id}`}
                 className="group relative px-3 py-2 text-sm text-ink-soft transition-colors hover:text-ink"
               >
                 <span className="font-mono text-[10px] text-mute-soft">
                   {link.number}.
                 </span>{" "}
                 <span>{link.label}</span>
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -157,9 +157,9 @@ export function Nav() {
               <div className="glass-strong overflow-hidden rounded-lg p-2">
                 <nav className="flex flex-col" aria-label="Mobile">
                   {LINKS.map((link) => (
-                    <a
+                    <Link
                       key={link.id}
-                      href={`#${link.id}`}
+                      href={`/#${link.id}`}
                       onClick={() => setOpen(false)}
                       className="flex items-baseline gap-3 rounded-md px-3 py-3 text-base text-ink-soft transition-colors hover:bg-white/5 hover:text-ink"
                     >
@@ -167,7 +167,7 @@ export function Nav() {
                         {link.number}
                       </span>
                       <span>{link.label}</span>
-                    </a>
+                    </Link>
                   ))}
                 </nav>
                 <div className="mt-2 flex items-center justify-between gap-2 border-t border-[color:var(--hairline)] px-3 pt-3">
