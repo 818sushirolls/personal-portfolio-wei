@@ -114,7 +114,7 @@ export async function Projects() {
                   )}
                   <span
                     aria-hidden
-                    className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent/80 transition-colors group-hover:text-accent"
+                    className="pointer-events-none font-mono text-[11px] uppercase tracking-[0.18em] text-accent/80 transition-colors group-hover:text-accent"
                   >
                     read more →
                   </span>
