@@ -1,6 +1,6 @@
 # personal-portfolio-wei
 
-* This is the source for emilywei.dev (or something). *
+This is the source for emilywei.dev (or something).
 
 I'm Emily, a recently graduated software engineer. Most of what I love about
 engineering came from the same place: rockets, sci-fi, and the kind of
