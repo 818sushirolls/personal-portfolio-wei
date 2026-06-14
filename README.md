@@ -1,14 +1,12 @@
 # personal-portfolio-wei
 
-This is the source for emilywei.dev (or wherever this ends up living). It's a
-personal site, not a template.
+* This is the source for emilywei.dev (or something). *
 
 I'm Emily, a recently graduated software engineer. Most of what I love about
-engineering came from the same place rockets, sci-fi, and the kind of
+engineering came from the same place: rockets, sci-fi, and the kind of
 hardware that gets to fly. I studied propulsion, fluid mechanics, and CAD
 along the way, and ended up writing software because the problems I cared
-about kept showing up in code. The site is themed loosely around mission
-control, mostly because that's the world I grew up reading about.
+about kept showing up in code. The site is themed loosely around such.
 
 Live: _coming soon on Vercel_
 
@@ -44,13 +42,6 @@ pnpm dev      # http://localhost:3000
 pnpm build
 pnpm start
 ```
-
-If you're on Windows with the project inside a OneDrive-synced folder and you
-hit AES-GCM cipher errors during install, junction `node_modules` to a path
-outside OneDrive. There's a known intermittent Node 22 OpenSSL bug that fires
-when OneDrive races with package extraction. The dev and build scripts use
-Webpack rather than Turbopack so cross-volume `node_modules` symlinks resolve
-cleanly.
 
 ## Adding a logbook post
 
